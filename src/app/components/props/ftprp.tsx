@@ -17,7 +17,7 @@ const FtPrp = (props: FtImgs) => {
           <p className="text-[#737373] leading-[16px] text-[12px] ">News</p>
         </div>
         <p className="text-[20px] pl-2 leading-[20px] pb-3 w-[240px] text-[#252B42] ">
-          Loudest à la Madison #1 (L'integral)
+          Loudest à la Madison #1 L'integral
         </p>
         <p className="leading-[20px] pl-2 w-[280px] pb-3 text-[#737373]">
           We focus on ergonomics and meeting you where you work. It's only a

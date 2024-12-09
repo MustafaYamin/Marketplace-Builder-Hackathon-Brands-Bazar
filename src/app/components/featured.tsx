@@ -8,7 +8,7 @@ export default function Featured() {
         </h1>
         <p className="leading-[20px] px-9 md:px-0 text-wrap text-center w-[420px] pb-4  text-[#737373]">
           Problems trying to resolve the conflict between the two major realms
-          of Classical physics: Newtonian mechanics{" "}
+          of Classical physics: Newtonian mechanics
         </p>
       </div>
       <div className="lg:grid-cols-3 grid grid-cols-1 md:grid-cols-2 gap-2">

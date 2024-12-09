@@ -1,4 +1,3 @@
-// import React from 'react';
 import Image from "next/image";
 
 export default function EditorPick() {
@@ -8,7 +7,7 @@ export default function EditorPick() {
         EDITOR'S PICK
       </h1>
       <p className="text-[#737373] leading-4 text-[14px]">
-        Problems trying to resolve the conflict between{" "}
+        Problems trying to resolve the conflict between
       </p>
 
       <div className="flex sm:flex-row flex-col justify-between gap-0 sm:gap-3 items-center">
