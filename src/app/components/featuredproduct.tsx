@@ -8,7 +8,7 @@ export default function BestSeller() {
         BESTSELLER PRODUCTS
       </h2>
       <p className="leading-[20px] text-[14px] font-[14px] text-[#737373]">
-        Problems trying to resolve the conflict between{" "}
+        Problems trying to resolve the conflict between
       </p>
 
       <div className="pt-6 gap-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">

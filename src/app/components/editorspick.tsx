@@ -4,7 +4,7 @@ export default function EditorPick() {
   return (
     <div className=" flex flex-col items-center mt-44 sm:mt-0 bg-gray-100">
       <h1 className="font-bold leading-[32px] pt-9 text-[#252B42]">
-        EDITOR'S PICK
+        EDITOR&apos;S PICK
       </h1>
       <p className="text-[#737373] leading-4 text-[14px]">
         Problems trying to resolve the conflict between
