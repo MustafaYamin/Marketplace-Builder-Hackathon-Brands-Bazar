@@ -39,35 +39,41 @@ const NavBar = () => {
       </div>
 
       {/* Main Navigation */}
-      <div className="bg-white py-4 shadow-md">
+      <div className="bg-white  py-4 shadow-md">
         <div className="container mx-auto flex justify-between items-center px-4">
           {/* Logo */}
           <div className="text-2xl font-bold">Bandage</div>
 
           {/* Hamburger Menu for Small Screens */}
+
+          <div className="flex gap-3">
+            <Image className="md:hidden" src="/msearch.png" alt="img" width={15} height={15}/>
+            <Image className="md:hidden" src="/mcart.png" alt="img" width={15} height={15}/>
+
           <button
             className="block lg:hidden text-[#737373] focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle navigation menu"
-          >
+            >
             ☰
           </button>
+            </div>
 
           {/* Navigation Links */}
           <nav
             className={`${
               menuOpen ? "block" : "hidden"
-            } absolute top-16 left-0 w-full bg-white shadow-lg lg:relative lg:flex lg:top-auto lg:left-auto lg:shadow-none`}
+            } absolute top-16 left-0 w-full bg-white shadow-lg mt-12 lg:relative lg:flex lg:top-auto lg:left-auto lg:shadow-none`}
           >
-            <div className="md:flex  md:items-center md:space-x-8">
+            <div className="md:flex relative bottom-6 -right-6 md:items-center md:space-x-8">
               <a
-                href="#"
+                href="/"
                 className="block py-2 px-4 text-[#737373] font-bold hover:text-blue-500"
               >
                 Home
               </a>
               <a
-                href="#"
+                href="/productlisting"
                 className="block py-2 px-4 text-[#737373] font-bold hover:text-blue-500"
               >
                 Shop

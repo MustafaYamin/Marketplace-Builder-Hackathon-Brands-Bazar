@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Image from "next/image";
 
 export default function NeuralUni() {
@@ -21,9 +23,11 @@ export default function NeuralUni() {
           We know how large objects will act, but things on a small scale.
         </p>
         <div className="flex gap-2">
-          <button className="mt-4 lg:mt-6 lg:w-[228px] lg:h-[62px] bg-[#2dc070] text-white font-bold rounded-sm py-2 px-4 text-sm lg:text-base">
-            BUY NOW
-          </button>
+          <Link href="/product">
+            <button className="mt-4 lg:mt-6 lg:w-[228px] lg:h-[62px] bg-[#2dc070] text-white font-bold rounded-sm py-2 px-4 text-sm lg:text-base">
+              BUY NOW
+            </button>
+          </Link>
 
           <button className="mt-4 lg:mt-6 lg:w-[228px] border-2 border-[#2dc070] lg:h-[62px] text-[#2dc070]  font-bold rounded-sm py-2 px-4 text-sm lg:text-base">
             READ MORE
