@@ -2,11 +2,13 @@ import Parteners from "../components/partners";
 import Footer from "../components/footer";
 import Image from "next/image";
 import BsellerProp from "../components/props/bsellerpro";
+import NavBar from "../components/header";
 
 export default function Product() {
   const review = "0";
   return (
     <div>
+      <NavBar />
       <div className="flex bg-[#ECECEC] pt-3  w-[100vw] relative  pl-28  items-center gap-3">
         <div className="text-[#252B42] font-bold text-[14px] leading-6">
           Home

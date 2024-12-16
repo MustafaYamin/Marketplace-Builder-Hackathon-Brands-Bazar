@@ -47,23 +47,35 @@ const NavBar = () => {
           {/* Hamburger Menu for Small Screens */}
 
           <div className="flex gap-3">
-            <Image className="md:hidden" src="/msearch.png" alt="img" width={15} height={15}/>
-            <Image className="md:hidden" src="/mcart.png" alt="img" width={15} height={15}/>
+            <Image
+              className="md:hidden"
+              src="/msearch.png"
+              alt="img"
+              width={15}
+              height={15}
+            />
+            <Image
+              className="md:hidden"
+              src="/mcart.png"
+              alt="img"
+              width={15}
+              height={15}
+            />
 
-          <button
-            className="block lg:hidden text-[#737373] focus:outline-none"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle navigation menu"
+            <button
+              className="block lg:hidden text-[#737373] focus:outline-none"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle navigation menu"
             >
-            ☰
-          </button>
-            </div>
+              ☰
+            </button>
+          </div>
 
           {/* Navigation Links */}
           <nav
             className={`${
               menuOpen ? "block" : "hidden"
-            } absolute top-16 left-0 w-full bg-white shadow-lg mt-12 lg:relative lg:flex lg:top-auto lg:left-auto lg:shadow-none`}
+            } absolute z-10 top-16 left-0 w-full bg-white shadow-lg mt-12 lg:relative lg:flex lg:top-auto lg:left-auto lg:shadow-none`}
           >
             <div className="md:flex relative bottom-6 -right-6 md:items-center md:space-x-8">
               <a
@@ -79,13 +91,13 @@ const NavBar = () => {
                 Shop
               </a>
               <a
-                href="#"
+                href="/about"
                 className="block py-2 px-4 text-[#737373] font-bold hover:text-blue-500"
               >
                 About
               </a>
               <a
-                href="#"
+                href="/blogs"
                 className="block py-2 px-4 text-[#737373] font-bold hover:text-blue-500"
               >
                 Blog

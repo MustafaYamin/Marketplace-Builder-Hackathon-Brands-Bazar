@@ -2,9 +2,13 @@ import Image from "next/image";
 import Parteners from "../components/partners";
 import Footer from "../components/footer";
 import BestsellerProp from "../components/props/bestseller";
+import NavBar from "../components/header";
 export default function ProductsListing() {
   return (
+    <div>
+<NavBar/>
     <div className="bg-[#FAFAFA] w-[100vw]">
+      
       <div className=" w-[100vw] flex items-center justify-between px-20  h-20 bg-[#FAFAFA] ">
         <div className="text-[#252B42] text-[24px] font-bold leadin-[32px] ">
           {" "}
@@ -56,7 +60,7 @@ export default function ProductsListing() {
               alt="shop image"
               width={220}
               height={230}
-            />
+              />
           </div>
           <div className="flex flex-col items-center ">
             <div className="gap-2 justify-center text-center flex flex-col relative top-32">
@@ -70,7 +74,7 @@ export default function ProductsListing() {
               alt="shop image"
               width={220}
               height={230}
-            />
+              />
           </div>
           <div className="flex flex-col items-center ">
             <div className="gap-2 justify-center text-center flex flex-col relative top-32">
@@ -84,7 +88,7 @@ export default function ProductsListing() {
               alt="shop image"
               width={220}
               height={230}
-            />
+              />
           </div>
           <div className="flex flex-col items-center ">
             <div className="gap-2 justify-center text-center flex flex-col relative top-32">
@@ -98,7 +102,7 @@ export default function ProductsListing() {
               alt="shop image"
               width={220}
               height={230}
-            />
+              />
           </div>
         </div>
       </div>
@@ -128,7 +132,7 @@ export default function ProductsListing() {
                 alt="view image"
                 width={14}
                 height={10}
-              />
+                />
             </div>
           </div>
           <div className="flex  items-center gap-2">
@@ -195,5 +199,6 @@ export default function ProductsListing() {
         <Footer />
       </div>
     </div>
+                </div>
   );
 }
