@@ -56,7 +56,7 @@ export default function Pricing() {
           </div>
         </div>
 
-        <div className=" grid w-[100vw] xl:pl-24 lg:gap-1 gap-y-3 grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
+        <div className=" grid w-[100vw] ml-16 md:ml-0  xl:pl-24 lg:gap-1 gap-y-3 grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
           <div className="h-[664px]  border-[1px] border-[#23A6F0] rounded-md   lg:mt-8  w-[335px] flex flex-col text-center py-6 bg-[#FFFFFF]">
             <div className="font-bold text-[#252B42] text-xl leading-[32px] ">
               FREE

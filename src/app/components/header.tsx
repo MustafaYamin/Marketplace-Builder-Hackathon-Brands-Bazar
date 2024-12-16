@@ -103,7 +103,7 @@ const NavBar = () => {
                 Blog
               </a>
               <a
-                href="#"
+                href="/contact"
                 className="block py-2 px-4 text-[#737373] font-bold hover:text-blue-500"
               >
                 Contact
