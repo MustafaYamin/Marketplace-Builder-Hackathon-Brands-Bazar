@@ -1,10 +1,50 @@
+'use client'
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Parteners from "../components/partners";
 import Footer from "../components/footer";
-import BestsellerProp from "../components/props/bestseller";
 import NavBar from "../components/header";
-export default function ProductsListing() {
+import { client } from "../../sanity/lib/client";
+
+
+function truncateText(text: string, maxLength: number) {
+if (!text){
+  return "";
+}
+  if (text.length > maxLength) {
+    return text.slice(0, maxLength) + "...";
+  }
+  return text;
+} 
+
+const getFtProducts = async () => {
+  const product = await client.fetch(`
+    *[_type == "product"]{
+  _id,
+    name,
+    decsription,
+    price,
+    
+    "image_url": image.asset->url,
+}
+    `);
+  return product;
+};
+
+export default function ProductListingPage() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const productsData = await getFtProducts();
+      setProducts(productsData);
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
+    <div> 
     <div>
 <NavBar/>
     <div className="bg-[#FAFAFA] w-[100vw]">
@@ -13,6 +53,7 @@ export default function ProductsListing() {
         <div className="text-[#252B42] text-[24px] font-bold leadin-[32px] ">
           {" "}
           SHOP{" "}
+            </div>
         </div>
         <div className="flex items-center gap-3">
           <div className="text-[#252B42] font-bold text-[14px] leading-6">
@@ -156,7 +197,48 @@ export default function ProductsListing() {
 
       <div className="flex items-center justify-center ">
         <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-9 items-center justify-center">
-          <BestsellerProp src="/fixed-height-2.png" alt="img" />
+         
+          {products.map(
+                   (product: {
+                     id: string;
+                     name: string;
+                     price: number;
+                     image_url: string;
+                   }) => (
+                     <div className="w-[241px] h-[639px] " key={product.id}>
+                       <Image
+                         className="h-80 "
+                         alt={product.name}
+                         src={product.image_url}
+                         width={239}
+                         height={420}
+                       />
+                       <div className="w-[239px] h-[188px] flex flex-col pt-1 items-center gap-2 ">
+                         <h1 className="font-bold text-[16px] text-[#252B42] leading-[24px]">
+                           {truncateText(product.name, 20)}
+                         </h1>
+                         <p className="text-[14px] leading-[24px] font-bold text-[#737373]">
+                           English Department
+                         </p>
+                         <div className="flex gap-1 items-center">
+                           <p className="font-bold text-[16px] text-[#23856D] ">
+                             {product.price}
+                           </p>
+                         </div>
+                         <div className="py-3 flex gap-2">
+                           <div className="rounded-full w-[16px] h-[16px] bg-[#23A6F0] "></div>
+                           <div className="rounded-full w-[16px] h-[16px] bg-[#23856D]"></div>
+                           <div className="rounded-full w-[16px] h-[16px] bg-[#E77C40]"></div>
+                           <div className="rounded-full w-[16px] h-[16px] bg-[#252B42]"></div>
+                         </div>
+                       </div>
+                     </div>
+                   )
+                 )}
+         
+         
+         
+          {/* <BestsellerProp src="/fixed-height-2.png" alt="img" />
           <BestsellerProp src="/fixed-height.png" alt="img" />
           <BestsellerProp src="/pro-cover-1.png" alt="img" />
           <BestsellerProp src="/product-cover-5.png" alt="img" />
@@ -169,7 +251,7 @@ export default function ProductsListing() {
           <BestsellerProp src="/pro-cover-6.png" alt="img" />
           <BestsellerProp src="/pro-cover-7.png" alt="img" />
           <BestsellerProp src="/pro-cover-8.png" alt="img" />
-          <BestsellerProp src="/pro-cover-9.png" alt="img" />
+          <BestsellerProp src="/pro-cover-9.png" alt="img" /> */}
         </div>
       </div>
 
