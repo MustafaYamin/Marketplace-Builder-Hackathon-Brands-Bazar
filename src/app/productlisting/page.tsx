@@ -237,21 +237,6 @@ export default function ProductListingPage() {
                  )}
          
          
-         
-          {/* <BestsellerProp src="/fixed-height-2.png" alt="img" />
-          <BestsellerProp src="/fixed-height.png" alt="img" />
-          <BestsellerProp src="/pro-cover-1.png" alt="img" />
-          <BestsellerProp src="/product-cover-5.png" alt="img" />
-
-          <BestsellerProp src="/pro-cover-2.png" alt="img" />
-          <BestsellerProp src="/pro-cover-3.png" alt="img" />
-          <BestsellerProp src="/pro-cover-4.png" alt="img" />
-          <BestsellerProp src="/pro-cover-5.png" alt="img" />
-
-          <BestsellerProp src="/pro-cover-6.png" alt="img" />
-          <BestsellerProp src="/pro-cover-7.png" alt="img" />
-          <BestsellerProp src="/pro-cover-8.png" alt="img" />
-          <BestsellerProp src="/pro-cover-9.png" alt="img" /> */}
         </div>
       </div>
 
