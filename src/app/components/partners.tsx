@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function Parteners() {
   return (
-    <div className="w-[100vw] bg-[#FAFAFA] h-auto py-7 flex items-center justify-center">
+    <div className="w-[100vw] bg-white h-auto py-7 flex items-center justify-center">
       <div className="w-[100vw]  gap-20  items-center justify-center h-auto py-7 flex flex-wrap bg-transparent">
         <Image
           className="md:w-20 lg:w-32"

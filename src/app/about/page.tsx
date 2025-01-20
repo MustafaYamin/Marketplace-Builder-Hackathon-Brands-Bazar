@@ -1,13 +1,11 @@
-import SubNav from "../components/subNav";
 import Image from "next/image";
 import OurTeam from "../components/props/ourteam";
 import Parteners from "../components/partners";
-import Footer from "../components/footer";
 
 export default function About() {
   return (
     <div>
-      <SubNav />
+
 
       <div className=" flex mt-4 md:w-[80vw] lg:w-[90vw] flex-col md:flex-row items-center justify-center">
         <div className="flex relative left md:left-60  flex-col gap-5">
@@ -166,7 +164,7 @@ export default function About() {
         </div>
       </div>
 
-      <Footer />
+  
     </div>
   );
 }

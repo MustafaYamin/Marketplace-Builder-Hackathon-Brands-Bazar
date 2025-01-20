@@ -22,7 +22,7 @@ export default function HeroSection() {
           We know how large objects will act, but things on a small scale.
         </p>
         <Link
-          href="/productlisting"
+          href="/shop"
           className="mt-3 active:bg-[#419c6a] lg:mt-6 lg:w-[228px] lg:h-[62px] bg-[#2dc070] text-white text-center  font-bold rounded-sm py-2 px-4  lg:text-base"
         >
           <p className="mt-2  text-[14px] lg:text-sm">SHOP NOW</p>

@@ -100,9 +100,7 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <div className="text-[#737373] text-wrap py-11 font-bold md:pl-44 bg-[#FAFAFA] w-[100vw] ">
-        Made With Love By Finland All Right Reserved
-      </div>
+      
     </div>
   );
 }

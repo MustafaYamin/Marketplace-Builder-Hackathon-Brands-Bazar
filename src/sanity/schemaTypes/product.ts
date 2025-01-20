@@ -30,9 +30,10 @@ const product = {
     },
     {
       name: "image",
-      title: "Image",
+      title: "Product images",
       validation: (rule: Rule) => rule.required(),
       type: "image",
+      // of: [{type: 'image'}]
       options: {
         hotspot: true,
       },

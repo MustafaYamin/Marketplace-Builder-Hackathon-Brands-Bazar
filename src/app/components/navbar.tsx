@@ -1,9 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { ShoppingBag } from "lucide-react";
+import { useShoppingCart } from "use-shopping-cart";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { handleCartClick } = useShoppingCart();
 
   return (
     <div>
@@ -49,13 +52,6 @@ const NavBar = () => {
           <div className="flex gap-3">
             <Image
               className="md:hidden"
-              src="/msearch.png"
-              alt="img"
-              width={15}
-              height={15}
-            />
-            <Image
-              className="md:hidden"
               src="/mcart.png"
               alt="img"
               width={15}
@@ -85,7 +81,7 @@ const NavBar = () => {
                 Home
               </a>
               <a
-                href="/productlisting"
+                href="/shop"
                 className="block py-2 px-4 text-[#737373] font-bold hover:text-blue-500"
               >
                 Shop
@@ -96,12 +92,7 @@ const NavBar = () => {
               >
                 About
               </a>
-              <a
-                href="/blogs"
-                className="block py-2 px-4 text-[#737373] font-bold hover:text-blue-500"
-              >
-                Blog
-              </a>
+
               <a
                 href="/contact"
                 className="block py-2 px-4 text-[#737373] font-bold hover:text-blue-500"
@@ -120,12 +111,10 @@ const NavBar = () => {
             >
               Login / Register
             </a>
-            <Image alt="search" src="/search.png" width={20} height={20} />
             <div className="relative">
-              <Image alt="cart" src="/a.png" width={60} height={12} />
-            </div>
-            <div className=" ">
-              <Image alt="wishlist" src="/li.png" width={60} height={12} />
+              <button onClick={() => handleCartClick()}>
+                <ShoppingBag />
+              </button>
             </div>
           </div>
         </div>

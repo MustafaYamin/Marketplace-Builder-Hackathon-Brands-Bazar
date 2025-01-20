@@ -5,9 +5,8 @@ import BestSeller from "./components/featuredproduct";
 import { useEffect, useState } from "react";
 import VirtualProducts from "./components/virtualproduct";
 import NeuralUni from "./components/neural";
-import Featured from "./components/featured";
-import Footer from "./components/footer";
-import NavBar from "./components/header";
+
+
 
   const Page = () => {
     const [bestSellerComponent, setBestSellerComponent] = useState<JSX.Element | null>(null);
@@ -23,7 +22,7 @@ import NavBar from "./components/header";
   return (
 
     <div>
-      <NavBar />
+ 
       <HeroSection />
 
       <EditorsPick />
@@ -34,9 +33,8 @@ import NavBar from "./components/header";
 
       <NeuralUni />
 
-      <Featured />
 
-      <Footer />
+     
     </div>
   );
 };

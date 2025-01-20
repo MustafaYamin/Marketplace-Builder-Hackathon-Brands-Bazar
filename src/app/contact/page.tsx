@@ -1,11 +1,9 @@
 import Image from "next/image";
-import SubNav from "../components/subNav";
-import Footer from "../components/footer";
 
 export default function Contact() {
   return (
     <div>
-      <SubNav />
+
 
       <div className="flex flex-col mt-5 md:flex-row gap-11 px-10 items-center justify-center">
         <div className="flex flex-col gap-6">
@@ -122,8 +120,6 @@ export default function Contact() {
           Try it free now
         </button>
 </div>
-
-<Footer/>
 
     </div>
   );
