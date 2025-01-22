@@ -95,9 +95,7 @@ export default function Product({ params }: { params: { slug: string } }) {
                   <AddToCart currency="PKR" description={products.description} image={products.image_url} name={products.name} price={products.price} 
                   quantity={products.quantity?.toString() || ''} key={products._id} id={products._id}/>
                   
-                  {/* <button className="w-36 h-11 mt-16 sm:mt-8 rounded-md hover:bg-blue-200 hover:text-white bg-[#23A6F0] text-white">
-                    Add to cart
-                  </button> */}
+               
                   <button className="w-36 hover:bg-gray-300 h-11 mt-16 sm:mt-8 rounded-md bg-[#c4c5c5] text-[#1a1a1a]">
                     Checkout
                   </button>
@@ -107,7 +105,7 @@ export default function Product({ params }: { params: { slug: string } }) {
           </div>
         ))
       ) : (
-        <div>No product found.</div>
+        <div className=" p-10 text-gray-600 text-4xl md:text-7xl border-b-2 border-gray-600">This product is not found.</div>
       )}
 
       {/* Best Seller Component */}

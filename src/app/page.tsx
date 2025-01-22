@@ -1,9 +1,7 @@
 'use client';
 import HeroSection from "./components/herosec";
-import EditorsPick from "./components/editorspick";
 import BestSeller from "./components/featuredproduct";
 import { useEffect, useState } from "react";
-import VirtualProducts from "./components/virtualproduct";
 import NeuralUni from "./components/neural";
 
 
@@ -25,11 +23,9 @@ import NeuralUni from "./components/neural";
  
       <HeroSection />
 
-      <EditorsPick />
 
       {bestSellerComponent}
 
-      <VirtualProducts />
 
       <NeuralUni />
 

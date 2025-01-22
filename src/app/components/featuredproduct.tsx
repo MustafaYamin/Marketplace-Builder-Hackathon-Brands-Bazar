@@ -11,7 +11,7 @@ function truncateText(text: string, maxLength: number) {
 
 const getFtProducts = async () => {
   const product = await client.fetch(`
-    *[_type == "product"][0..7]{
+    *[_type == "product"][0..11]{
   _id,
     name,
     description,

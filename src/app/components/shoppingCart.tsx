@@ -8,6 +8,10 @@ import {
 } from "@/components/ui/sheet";
 import { useShoppingCart } from "use-shopping-cart";
 
+import Link from "next/link";
+
+
+
 export function ShoppingCart() {
   const {
     cartCount,
@@ -19,7 +23,7 @@ export function ShoppingCart() {
   } = useShoppingCart();
   return (
     <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
-      <SheetContent className="sm:max-w-lg w-[90vw]">
+      <SheetContent className="sm:max-w-xl w-[90vw]">
         <SheetHeader>
           <SheetTitle>Shopping Cart</SheetTitle>
         </SheetHeader>
@@ -48,9 +52,7 @@ export function ShoppingCart() {
                             <h3>{entery.name}</h3>
                             <p>Rs{entery.price}</p>
                           </div>
-                          <p className="mt-1 pr-7 text-sm text-gray-500 line-clamp-2">
-                            {entery.description}
-                          </p>
+                         
                         </div>
                         <div className="flex flex-1 items-end justify-between text-sm">
                           <p className="text-gray-500">
@@ -67,23 +69,28 @@ export function ShoppingCart() {
                           </div>
                         </div>
                       </div>
+            <div className="border-t   border-gray-200 px-4 py-6 sm:px-6">
+            <div className="  flex justify-between text-base font-medium text-gray-900">
+              <p>Subtotal:</p>
+              <p>{totalPrice}</p>
+            </div>
+        
+            <><p className="mt-0.5 text-sm text-gray-500">Shiping is calculated at checkout</p>
+            <Link onClick={() => removeItem(entery.id)} href="/thankyou" className="mt-6">
+              <button className="bg-[#7979dbb7] hover:bg-[#8e8eeeb7] text-lg active:bg-[#8e8eeeb7] text-white font-bold rounded-md w-full py-4">Checkout</button>
+            </Link></>
+    
+          </div>
                     </li>
                   ))}
                 </>
               )}
             </ul>
           </div>
-
-          <div className="border-t   border-gray-200 px-4 py-6 sm:px-6">
-            <div className="  flex justify-between text-base font-medium text-gray-900">
+          <div className="  flex justify-between text-base font-medium text-gray-900">
               <p>Subtotal:</p>
               <p>{totalPrice}</p>
             </div>
-            <p className="mt-0.5 text-sm text-gray-500">Shiping is calculated at checkout</p>
-            <div className="mt-6">
-                <button className="bg-[#7979dbb7] hover:bg-[#8e8eeeb7] text-lg active:bg-[#8e8eeeb7] text-white font-bold rounded-md w-full py-4">Checkout</button>
-            </div>
-          </div>
         </div>
       </SheetContent>
     </Sheet>

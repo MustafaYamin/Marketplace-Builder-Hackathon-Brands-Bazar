@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function NeuralUni() {
   return (
-    <div className="flex flex-col md:flex-row  w-[100vw] ">
+    <div className="flex flex-col mt-12 md:flex-row  w-[100vw] ">
       <Image
         className="pl-10 md:w-[450px] lg:w-[650px] md:h-[500px] "
         alt="neural universe"

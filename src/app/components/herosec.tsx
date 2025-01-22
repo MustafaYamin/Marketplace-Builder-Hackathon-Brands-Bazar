@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <div className=" overflow-visible">
+    <div className=" mb-[-230px] overflow-visible">
       <Image
         alt="hero image"
         src="/herosec.png"

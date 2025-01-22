@@ -104,13 +104,7 @@ const NavBar = () => {
 
           {/* Right Icons */}
           <div className="hidden sm:flex items-center space-x-4">
-            <Image alt="account" src="/account.png" width={20} height={20} />
-            <a
-              href="#"
-              className="text-blue-500 w-48 font-bold hover:underline"
-            >
-              Login / Register
-            </a>
+           
             <div className="relative">
               <button onClick={() => handleCartClick()}>
                 <ShoppingBag />
