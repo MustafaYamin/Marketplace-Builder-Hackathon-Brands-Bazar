@@ -2,7 +2,7 @@
 
 import Parteners from "../../components/partners";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, use, type JSX } from "react";
 import BestSeller from "../../components/featuredproduct";
 import { client } from "@/sanity/lib/client";
 import AddToCart from "@/app/components/addToCart";
@@ -34,7 +34,8 @@ async function getData(slug: string): Promise <Product[]> {
   return data;
 }
 
-export default function Product({ params }: { params: { slug: string } }) {
+export default function Product(props: { params: Promise<{ slug: string }> }) {
+  const params = use(props.params);
   const [product, setProduct] = useState<Product[]>([]);
   const [bestSellerComponent, setBestSellerComponent] =
     useState<JSX.Element | null>(null);

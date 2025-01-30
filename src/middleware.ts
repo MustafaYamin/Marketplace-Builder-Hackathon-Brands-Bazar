@@ -6,7 +6,7 @@ export default clerkMiddleware(() => {
   return NextResponse.next();
 });
 
-// Matcher config (same as before)
+// Matcher config
 export const config = {
   matcher: "/((?!_next|.*\\..*).*)",
 };

@@ -1,7 +1,7 @@
 "use client";
 import Checkout from "../components/checkOut";
 import BestSeller from "../components/featuredproduct";
-import { useState, useEffect } from "react";
+import { useState, useEffect, type JSX } from "react";
 
 export default function Thankyou() {
   const [bestSellerComponent, setBestSellerComponent] =

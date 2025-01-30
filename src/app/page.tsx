@@ -1,7 +1,7 @@
 "use client";
 import HeroSection from "./components/herosec";
 import BestSeller from "./components/featuredproduct";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type JSX } from "react";
 import NeuralUni from "./components/neural";
 
 const Page = () => {
