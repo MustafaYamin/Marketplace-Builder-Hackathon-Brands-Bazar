@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, } from "react";
 import Image from "next/image";
-import { Link, ShoppingBag } from "lucide-react";
+import {  ShoppingBag } from "lucide-react";
 import { useShoppingCart } from "use-shopping-cart";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 
@@ -81,31 +82,34 @@ const NavBar = () => {
               } absolute z-10 top-16 left-0 w-full bg-white shadow-lg mt-12 lg:relative lg:flex lg:top-auto lg:left-auto lg:shadow-none`}
             >
               <div className="md:flex relative bottom-6 -right-6 md:items-center md:space-x-8">
-                <a
+                <button>
+
+                <Link
                   href="/"
-                  className="block py-2 px-4 text-[#737373] font-bold hover:text-blue-500"
-                >
+                  className="block py-2 px-4 text-[#737373]  font-bold hover:text-blue-500"
+                  >
                   Home
-                </a>
-                <a
+                </Link>
+                  </button>
+                <Link
                   href="/shop"
-                  className="block py-2 px-4 text-[#737373] font-bold hover:text-blue-500"
+                  className="block py-2 px-4 text-[#737373]  font-bold hover:text-blue-500"
                 >
                   Shop
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/about"
                   className="block py-2 px-4 text-[#737373] font-bold hover:text-blue-500"
                 >
                   About
-                </a>
+                </Link>
 
-                <a
+                <Link
                   href="/contact"
                   className="block py-2 px-4 text-[#737373] font-bold hover:text-blue-500"
                 >
                   Contact
-                </a>
+                </Link>
               </div>
             </nav>
 
