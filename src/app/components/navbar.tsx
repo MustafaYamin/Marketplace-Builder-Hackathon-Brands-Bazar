@@ -1,11 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, } from "react";
 import Image from "next/image";
 import { ShoppingBag } from "lucide-react";
 import { useShoppingCart } from "use-shopping-cart";
 import { Button } from "@/components/ui/button";
 import {
-  ClerkProvider,
+  
   SignInButton,
   SignedIn,
   SignedOut,
