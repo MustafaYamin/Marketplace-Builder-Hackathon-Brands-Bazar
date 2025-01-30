@@ -1,3 +1,5 @@
+import { Link } from "lucide-react";
+
 // pages/404.js
 export default function Custom404() {
     return (
@@ -6,9 +8,9 @@ export default function Custom404() {
      
         <h1 className=" text-3xl p-4 " >404 - Page Not Found</h1>
         <p>Sorry, the page you are looking for does not exist.</p>
-        <a href="/" className="text-[#0070f3] underline">
+        <Link href="/" className="text-[#0070f3] underline">
           Go Back Home
-        </a>
+        </Link>
       </div>
      
     );
