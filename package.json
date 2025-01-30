@@ -6,11 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "cy:open": "cypress open"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^6.10.0",
+    "@clerk/nextjs": "^5.7.5",
     "@radix-ui/react-dialog": "^1.1.4",
     "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-switch": "^1.1.2",
@@ -43,6 +42,9 @@
     "eslint-config-next": "14.2.18",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5.7.3"
+  },
+  "resolutions": {
+    "@types/react": "^18.0.0"
   }
 }

@@ -4,13 +4,8 @@ import Image from "next/image";
 import { ShoppingBag } from "lucide-react";
 import { useShoppingCart } from "use-shopping-cart";
 import { Button } from "@/components/ui/button";
-import {
-  
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -68,13 +63,7 @@ const NavBar = () => {
             {/* Hamburger Menu for Small Screens */}
 
             <div className="flex gap-3">
-              {/* <Image
-              className="md:hidden"
-              src="/mcart.png"
-              alt="img"
-              width={15}
-              height={15}
-              /> */}
+            
 
               <button
                 className="block lg:hidden text-[#737373] focus:outline-none"
@@ -129,13 +118,15 @@ const NavBar = () => {
               </div>
               <div>
                 <Button>
-                  <SignedOut >
+                  <SignedOut>
                     <SignInButton />
                   </SignedOut>
                   <SignedIn>
                     <UserButton />
                   </SignedIn>
                 </Button>
+          
+
               </div>
             </div>
           </div>

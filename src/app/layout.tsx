@@ -29,9 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-  <ClerkProvider>
-
-
+      <ClerkProvider >
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -46,7 +44,7 @@ export default function RootLayout({
         </CartProvider>
       </body>
     </html>
-          </ClerkProvider>
+      </ClerkProvider>
        
   );
 }
