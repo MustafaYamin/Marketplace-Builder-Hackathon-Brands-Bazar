@@ -1,11 +1,12 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
-export default clerkMiddleware(() => {
+export default clerkMiddleware((auth, req) => {
+  // Add any custom middleware logic here
   return NextResponse.next();
 });
 
-// Ensure to match Clerk's config requirements
+// Matcher config (same as before)
 export const config = {
   matcher: "/((?!_next|.*\\..*).*)",
 };
