@@ -40,6 +40,7 @@ export default function Contact() {
               src="/logos_linkedin-black.png"
               alt="logos"
               width={30}
+            
               height={24}
             />
           </div>
