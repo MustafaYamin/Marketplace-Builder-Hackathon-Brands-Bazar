@@ -81,12 +81,12 @@ const NavBar = () => {
               } absolute z-10 top-16 left-0 w-full bg-white shadow-lg mt-12 lg:relative lg:flex lg:top-auto lg:left-auto lg:shadow-none`}
             >
               <div className="md:flex relative bottom-6 -right-6 md:items-center md:space-x-8">
-                <Link
+                <a
                   href="/"
                   className="block py-2 px-4 text-[#737373] font-bold hover:text-blue-500"
                 >
                   Home
-                </Link>
+                </a>
                 <a
                   href="/shop"
                   className="block py-2 px-4 text-[#737373] font-bold hover:text-blue-500"
