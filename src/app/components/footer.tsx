@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <div>
       <div className="w-[100vw] items-center flex justify-around border-b-2 border-b-gray-300 flex-wrap h-auto py-10 bg-transparent">
-        <div className="text-2xl font-bold">Bandage</div>
+        <div className="text-2xl font-bold">Brands Bazar</div>
         <Image src="/social media.png" alt="socials" width={120} height={20} />
       </div>
       <div className="h-auto flex flex-col lg:flex-row lg:pl-5 pl-4 justify-center py-12">

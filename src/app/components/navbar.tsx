@@ -47,7 +47,7 @@ const NavBar = () => {
       <div className="bg-white  py-4 shadow-md">
         <div className="container mx-auto flex justify-between items-center px-4">
           {/* Logo */}
-          <div className="text-2xl font-bold">Bandage</div>
+          <div className="text-xl md:text-2xl w-38 text-nowrap bg-white  font-semibold">Brands Bazar</div>
 
           {/* Hamburger Menu for Small Screens */}
 
