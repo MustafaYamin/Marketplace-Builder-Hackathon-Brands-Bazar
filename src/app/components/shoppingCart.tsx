@@ -7,20 +7,19 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { useShoppingCart } from "use-shopping-cart";
-import Link from "next/link";
 
-// Define type for cart item, making 'image' optional
+// Define CartItem type with optional image
 interface CartItem {
   id: string;
   name: string;
-  image?: string;  // Image is now optional
+  image?: string;
   price: number;
   quantity: number;
 }
 
 export function ShoppingCart() {
   const {
-    cartCount,
+    cartCount = 0,
     shouldDisplayCart,
     handleCartClick,
     cartDetails,
@@ -28,7 +27,10 @@ export function ShoppingCart() {
     totalPrice,
   } = useShoppingCart();
 
-  // Specify type for cartItems parameter
+  // Convert cartDetails into an array of CartItem[]
+  const cartItems: CartItem[] = Object.values(cartDetails || {}) as CartItem[];
+
+  // Checkout function with correctly typed cartItems
   async function hancleCheckout(cartItems: CartItem[]) {
     if (cartItems.length === 0) {
       alert("Cart is empty!");
@@ -54,14 +56,14 @@ export function ShoppingCart() {
           <SheetTitle>Shopping Cart</SheetTitle>
         </SheetHeader>
 
-        <div className="h-full flex-flex-col justify-between">
+        <div className="h-full flex flex-col justify-between">
           <div className="mt-8 flex-1 overflow-y-auto">
             <ul className="-my-6 divide-y divide-gray-200">
               {cartCount === 0 ? (
                 <h1 className="text-3xl py-6">Cart is empty</h1>
               ) : (
                 <>
-                  {Object.values(cartDetails || {}).map((entry) => (
+                  {cartItems.map((entry) => (
                     <li key={entry.id} className="flex py-6">
                       <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                         {/* Handle optional image */}
@@ -73,7 +75,9 @@ export function ShoppingCart() {
                             height={100}
                           />
                         ) : (
-                          <div className="w-full h-full bg-gray-200">No Image</div>
+                          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                            No Image
+                          </div>
                         )}
                       </div>
 
@@ -81,7 +85,7 @@ export function ShoppingCart() {
                         <div>
                           <div className="flex justify-between text-base font-semibold text-gray-900">
                             <h3>{entry.name}</h3>
-                            <p>Rs{entry.price}</p>
+                            <p>Rs {entry.price}</p>
                           </div>
                         </div>
                         <div className="flex flex-1 items-end justify-between text-sm">
@@ -97,31 +101,31 @@ export function ShoppingCart() {
                           </div>
                         </div>
                       </div>
-                      <div className="border-t border-gray-200 px-4 py-6 sm:px-6"></div>
                     </li>
                   ))}
                 </>
               )}
             </ul>
           </div>
+
           <div className="flex justify-between text-base font-medium text-gray-900">
             <p>Subtotal:</p>
-            <p>{totalPrice}</p>
+            <p>Rs {totalPrice}</p>
           </div>
-          <>
-            <p className="mt-0.5 text-sm text-gray-500">
-              Shipping is calculated at checkout
-            </p>
 
-            <Link href="/thankyou" className="mt-6">
+          {cartCount > 0 && (
+            <>
+              <p className="mt-0.5 text-sm text-gray-500">
+                Shipping is calculated at checkout
+              </p>
               <button
-                onClick={() => hancleCheckout(Object.values(cartDetails || {}))}
+                onClick={() => hancleCheckout(cartItems)}
                 className="bg-[#7979dbb7] hover:bg-[#8e8eeeb7] text-lg active:bg-[#8e8eeeb7] text-white font-bold rounded-md w-full py-4"
               >
                 Checkout
               </button>
-            </Link>
-          </>
+            </>
+          )}
         </div>
       </SheetContent>
     </Sheet>
