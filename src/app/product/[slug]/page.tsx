@@ -95,11 +95,7 @@ export default function Product(props: { params: Promise<{ slug: string }> }) {
                 <div className="flex  md:flex-row items-center gap-4">
                   <AddToCart currency="PKR" description={products.description} image={products.image_url} name={products.name} price={products.price} 
                   quantity={products.quantity?.toString() || ''} key={products._id} id={products._id}/>
-                  
-               
-                  <button className="w-36 hover:bg-gray-300 h-11 mt-16 sm:mt-8 rounded-md bg-[#c4c5c5] text-[#1a1a1a]">
-                    Checkout
-                  </button>
+              
                 </div>
               </div>
             </div>
