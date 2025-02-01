@@ -30,7 +30,7 @@ export function ShoppingCart() {
   // Convert cartDetails into an array of CartItem[]
   const cartItems: CartItem[] = Object.values(cartDetails || {}) as CartItem[];
 
-  // // Checkout function with correctly typed cartItems
+  // Checkout function with correctly typed cartItems
   async function hancleCheckout(cartItems: CartItem[]) {
     if (cartItems.length === 0) {
       alert("Cart is empty!");
