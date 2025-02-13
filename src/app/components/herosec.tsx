@@ -3,30 +3,35 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <div className=" mb-[-230px] overflow-visible">
+    <div className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[800px]">
       <Image
         alt="hero image"
         src="/herosec.png"
-        width={1540}
-        height={716}
-        className="w-full overflow-visible overflow-y-hidden h-auto"
+        fill
+        priority
+        className="object-cover w-full"
       />
-      <div className="relative -top-40 md:-top-80 lg:top-[-490px]  inset-0 flex flex-col justify-center xl:pl-16 items-start xl:gap-8 p-4 lg:p-10">
-        <p className="font-bold text-white  text-[8px] lg:text-base">
-          SUMMER 2020
-        </p>
-        <p className="leading-tight text-white text-2xl lg:text-5xl xl:text-[4rem] font-bold">
-          NEW COLLECTION
-        </p>
-        <p className="leading-snug text-white text-base lg:text-lg w-[250px] md:w-[390px] lg:w-[400px]">
-          We know how large objects will act, but things on a small scale.
-        </p>
-        <Link
-          href="/shop"
-          className="mt-3 active:bg-[#419c6a] lg:mt-6 lg:w-[228px] lg:h-[62px] bg-[#2dc070] text-white text-center  font-bold rounded-sm py-2 px-4  lg:text-base"
-        >
-          <p className="mt-2  text-[14px] lg:text-sm">SHOP NOW</p>
-        </Link>
+      <div className="absolute inset-0 bg-black/20"> {/* Optional overlay */}
+        <div className="container mx-auto h-full flex items-center px-4">
+          <div className="max-w-[600px] space-y-4 md:space-y-6">
+            <p className="text-white text-sm md:text-base lg:text-lg font-bold tracking-wider">
+              SUMMER 2020
+            </p>
+            <h1 className="text-white text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+              NEW COLLECTION
+            </h1>
+            <p className="text-white text-sm md:text-base lg:text-lg max-w-[450px]">
+              We know how large objects will act, but things on a small scale.
+            </p>
+            <Link
+              href="/shop"
+              className="inline-block bg-[#2dc070] hover:bg-[#2aa562] transition-colors text-white font-bold 
+                         px-8 py-3 md:px-10 md:py-4 rounded-md text-sm md:text-base"
+            >
+              SHOP NOW
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -25,28 +25,41 @@ export function ShoppingCart() {
     cartDetails,
     removeItem,
     totalPrice,
+    clearCart,
   } = useShoppingCart();
 
   // Convert cartDetails into an array of CartItem[]
   const cartItems: CartItem[] = Object.values(cartDetails || {}) as CartItem[];
 
   // Checkout function with correctly typed cartItems
-  async function hancleCheckout(cartItems: CartItem[]) {
+  async function handleCheckout(cartItems: CartItem[]) {
     if (cartItems.length === 0) {
       alert("Cart is empty!");
       return;
     }
 
-    const response = await fetch("/api/checkout", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ products: cartItems }),
-    });
+    try {
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ products: cartItems }),
+      });
 
-    const data = await response.json();
-    window.location.href = data.url;
+      const data = await response.json();
+      
+      if (response.ok) {
+        // Clear the cart before redirecting
+        clearCart();
+        window.location.href = data.url;
+      } else {
+        throw new Error('Checkout failed');
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
+      alert('There was an error processing your checkout. Please try again.');
+    }
   }
 
   return (
@@ -119,7 +132,7 @@ export function ShoppingCart() {
                 Shipping is calculated at checkout
               </p>
               <button
-                onClick={() => hancleCheckout(cartItems)}
+                onClick={() => handleCheckout(cartItems)}
                 className="bg-[#7979dbb7] hover:bg-[#8e8eeeb7] text-lg active:bg-[#8e8eeeb7] text-white font-bold rounded-md w-full py-4"
               >
                 Checkout
