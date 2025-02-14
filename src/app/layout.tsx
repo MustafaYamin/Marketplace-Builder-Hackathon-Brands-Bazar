@@ -7,6 +7,7 @@ import CartProvider from "./components/providers";
 import { ShoppingCart } from "./components/shoppingCart";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from 'sonner';
+import AnimationLayout from "./components/AnimationLayout";
 
 
 
@@ -26,10 +27,12 @@ export default function RootLayout({
         <body className="min-h-screen bg-background font-sans antialiased">
           <CartProvider>
             <Toaster position="top-center" />
-            <NavBar />
-            <ShoppingCart/>
-            {children}
-            <Footer />
+            <AnimationLayout>
+              <NavBar />
+              <ShoppingCart/>
+              {children}
+              <Footer />
+            </AnimationLayout>
           </CartProvider>
         </body>
       </html>

@@ -3,13 +3,17 @@ import Parteners from "../components/partners";
 import React, { useState } from "react";
 import ProductList from "../components/productlisting";
 import Link from "next/link";
+import { motion, useScroll } from "framer-motion";
 
 const ProductListingPage = () => {
+  const { scrollYProgress } = useScroll();
   const [sortBy, setSortBy] = useState('popular');
   const [layout, setLayout] = useState('grid');
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <motion.div
+      className="container mx-auto px-4 py-8"
+    >
       {/* Hero Section */}
       <div className="bg-white">
         <div className="max-w-[1400px] mx-auto px-4 py-12 md:py-16">
@@ -87,7 +91,16 @@ const ProductListingPage = () => {
           <Parteners />
         </div>
       </div>
-    </div>
+
+      {/* Scroll Progress Indicator */}
+      <motion.div
+        className="fixed bottom-0 left-0 right-0 h-1 bg-[#2dc070]"
+        style={{
+          scaleX: scrollYProgress,
+          transformOrigin: "0%"
+        }}
+      />
+    </motion.div>
   );
 };
 

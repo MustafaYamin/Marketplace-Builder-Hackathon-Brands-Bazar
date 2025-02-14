@@ -1,15 +1,31 @@
+"use client";
 import Image from "next/image";
 import OurTeam from "../components/props/ourteam";
-
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <div className="min-h-screen">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen"
+    >
       {/* Hero Section */}
-      <section className="relative bg-white py-16 md:py-24">
+      <motion.section 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+        className="relative bg-white py-16 md:py-24"
+      >
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="w-full md:w-1/2 space-y-6 text-center md:text-left mb-12 md:mb-0">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              className="w-full md:w-1/2 space-y-6 text-center md:text-left mb-12 md:mb-0"
+            >
               <span className="inline-block text-sm font-semibold text-[#2dc070] tracking-wider">
                 ABOUT COMPANY
               </span>
@@ -22,8 +38,13 @@ export default function About() {
               <button className="bg-[#2dc070] text-white px-8 py-4 rounded-md hover:bg-[#25a05d] transition-colors">
                 Get Quote Now
               </button>
-            </div>
-            <div className="w-full md:w-1/2">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+              className="w-full md:w-1/2"
+            >
               <Image
                 src="/about-hero.png"
                 alt="About Hero"
@@ -31,10 +52,10 @@ export default function About() {
                 height={600}
                 className="w-full h-auto rounded-lg"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Problem Statement Section */}
       <section className="py-16 bg-white">
@@ -54,7 +75,13 @@ export default function About() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-[#FAFAFA]">
+      <motion.section 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="py-20 bg-[#FAFAFA]"
+      >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -63,14 +90,21 @@ export default function About() {
               { number: "15", label: "Countries Worldwide" },
               { number: "100+", label: "Top Partners" },
             ].map((stat, index) => (
-              <div key={index} className="text-center">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="text-center"
+              >
                 <div className="text-5xl md:text-6xl font-bold text-[#252B42] mb-2">{stat.number}</div>
                 <div className="text-base md:text-lg text-[#737373]">{stat.label}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Video Section */}
       <section className="py-20">
@@ -142,6 +176,6 @@ export default function About() {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 }
